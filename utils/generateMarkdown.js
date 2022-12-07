@@ -1,24 +1,24 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Created a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
+function renderBadge(license) {
   if (license !== 'None') {
     return `![GitHub license](https://img.shields.io/badge/license-${license}-green.svg)`;
   }
   return '';
 }
 
-// TODO: Create a function that returns the license link
+// Created a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
+function renderLink(license) {
   if (license !== 'None') {
     return `\n* [License](#license)\n`;
   }
   return '';
 }
 
-// TODO: Create a function that returns the license section of README
+// Created a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+function renderSection(license) {
   if (license !== 'None') {
     return `## License
 
@@ -27,10 +27,10 @@ This project is licensed under the ${license} license.`;
   return '';
 }
 
-// TODO: Create a function to generate markdown for README
+// Created a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-${renderLicenseBadge(data.license)}
+${renderBadge(data.license)}
 
 ## Description
 
@@ -41,7 +41,7 @@ ${data.description}
 * [Installation](#installation)
 
 * [Usage](#usage)
-${renderLicenseLink(data.license)}
+${renderLink(data.license)}
 * [Contributing](#contributing)
 
 * [Tests](#tests)
@@ -52,15 +52,15 @@ ${renderLicenseLink(data.license)}
 
 To install necessary dependencies, run the following command:
 
-\`\`\`
+
 ${data.installation}
-\`\`\`
+
 
 ## Usage
 
 ${data.usage}
 
-${renderLicenseSection(data.license)}
+${renderSection(data.license)}
   
 ## Contributing
 
@@ -70,15 +70,15 @@ ${data.contributing}
 
 To run tests, run the following command:
 
-\`\`\`
+
 ${data.test}
-\`\`\`
+
 
 ## Questions
 
-If you have any questions about the repo, open an issue or contact me directly at ${
+To reach me with additional questions, email me at ${
     data.email
-  }. You can find more of my work at [${data.github}](https://github.com/${
+  }. View more of my work at [${data.github}](https://github.com/${
     data.github
   }/).
 
